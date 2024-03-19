@@ -1,5 +1,6 @@
 import { useContext, useEffect, useRef } from "react";
 import * as THREE from "three";
+import gsap from "gsap";
 import { ColourContext } from "./Views";
 
 const ThreeBackground = () => {
@@ -143,17 +144,28 @@ const ThreeBackground = () => {
     };
   }, []);
 
+  const updateStar = (starRef, idx) => {
+    starRef.forEach((star) => {
+      var initial = new THREE.Color(star.material.color.getHex());
+      var value = new THREE.Color(colour[idx]);
+
+      gsap.to(initial, 1, {
+        r: value.r,
+        g: value.g,
+        b: value.b,
+
+        onUpdate: function () {
+          star.material.color = initial;
+        },
+      });
+    });
+  };
+
   useEffect(() => {
     // Update the color of the stars when the color changes
-    shade1_starsRef.current.forEach((star) => {
-      star.material.color.set(colour[0]);
-    });
-    shade2_starsRef.current.forEach((star) => {
-      star.material.color.set(colour[1]);
-    });
-    shade3_starsRef.current.forEach((star) => {
-      star.material.color.set(colour[2]);
-    });
+    updateStar(shade1_starsRef.current, 0);
+    updateStar(shade2_starsRef.current, 1);
+    updateStar(shade3_starsRef.current, 2);
   }, [colour]);
 
   return <canvas ref={canvasRef} />;
