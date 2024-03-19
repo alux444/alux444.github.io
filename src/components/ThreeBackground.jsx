@@ -1,12 +1,14 @@
-import { useEffect, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 import * as THREE from "three";
+import { ColourContext } from "./Views";
 
 const ThreeBackground = () => {
   const canvasRef = useRef(null);
+  const { colour } = useContext(ColourContext);
+  const starsRef = useRef([]);
 
   useEffect(() => {
     let scene, camera, renderer;
-    let stars = [];
 
     const initScene = () => {
       scene = new THREE.Scene();
@@ -39,13 +41,13 @@ const ThreeBackground = () => {
           starGeometry = new THREE.IcosahedronGeometry();
         }
 
-        // const material = new THREE.MeshStandardMaterial({
-        //   color: "#3d4482",
-        //   emissive: "#ffffff",
-        //   emissiveIntensity: 0.001
-        // });
+        const material = new THREE.MeshStandardMaterial({
+          color: colour,
+          emissive: "#ffffff",
+          emissiveIntensity: 0.001,
+        });
 
-        const material = new THREE.MeshNormalMaterial({});
+        // const material = new THREE.MeshNormalMaterial({});
 
         Array(amount)
           .fill()
@@ -58,7 +60,7 @@ const ThreeBackground = () => {
 
             star.position.set(x, y, z);
             scene.add(star);
-            stars.push(star);
+            starsRef.current.push(star);
           });
       };
 
@@ -67,7 +69,7 @@ const ThreeBackground = () => {
     };
 
     const animate = () => {
-      stars.forEach((star) => {
+      starsRef.current.forEach((star) => {
         star.rotation.x += Math.random() * (0.015 - 0.002) + 0.002;
         star.rotation.y += Math.random() * (0.015 - 0.002) + 0.002;
         star.rotation.z += Math.random() * (0.015 - 0.002) + 0.002;
@@ -115,6 +117,13 @@ const ThreeBackground = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  useEffect(() => {
+    // Update the color of the stars when the color changes
+    starsRef.current.forEach((star) => {
+      star.material.color.set(colour);
+    });
+  }, [colour]);
 
   return <canvas ref={canvasRef} />;
 };
