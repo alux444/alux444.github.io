@@ -5,10 +5,13 @@ import { ColourContext } from "./Views";
 const ThreeBackground = () => {
   const canvasRef = useRef(null);
   const { colour } = useContext(ColourContext);
-  const starsRef = useRef([]);
+  const shade1_starsRef = useRef([]);
+  const shade2_starsRef = useRef([]);
+  const shade3_starsRef = useRef([]);
 
   useEffect(() => {
     let scene, camera, renderer;
+    let normalStars = [];
 
     const initScene = () => {
       scene = new THREE.Scene();
@@ -32,7 +35,7 @@ const ThreeBackground = () => {
       spotlight.position.set(0, 64, 32);
       scene.add(spotlight);
 
-      const addStar = (amount, type) => {
+      const addStar = (amount, type, array, normal, colour) => {
         let starGeometry = new THREE.TorusGeometry();
 
         if (type === 1) {
@@ -41,13 +44,13 @@ const ThreeBackground = () => {
           starGeometry = new THREE.IcosahedronGeometry();
         }
 
-        const material = new THREE.MeshStandardMaterial({
-          color: colour,
-          emissive: "#ffffff",
-          emissiveIntensity: 0.001,
-        });
-
-        // const material = new THREE.MeshNormalMaterial({});
+        const material = normal
+          ? new THREE.MeshNormalMaterial({})
+          : new THREE.MeshStandardMaterial({
+              color: colour,
+              emissive: "#ffffff",
+              emissiveIntensity: 0.01,
+            });
 
         Array(amount)
           .fill()
@@ -60,16 +63,38 @@ const ThreeBackground = () => {
 
             star.position.set(x, y, z);
             scene.add(star);
-            starsRef.current.push(star);
+            array.push(star);
           });
       };
 
-      addStar(8, 1);
-      addStar(8, 2);
+      addStar(3, 1, shade1_starsRef.current, false, colour[0]);
+      addStar(3, 2, shade1_starsRef.current, false, colour[0]);
+      addStar(3, 1, shade2_starsRef.current, false, colour[1]);
+      addStar(3, 2, shade2_starsRef.current, false, colour[1]);
+      addStar(3, 1, shade3_starsRef.current, false, colour[2]);
+      addStar(3, 2, shade3_starsRef.current, false, colour[2]);
     };
 
     const animate = () => {
-      starsRef.current.forEach((star) => {
+      shade1_starsRef.current.forEach((star) => {
+        star.rotation.x += Math.random() * (0.015 - 0.002) + 0.002;
+        star.rotation.y += Math.random() * (0.015 - 0.002) + 0.002;
+        star.rotation.z += Math.random() * (0.015 - 0.002) + 0.002;
+      });
+
+      shade2_starsRef.current.forEach((star) => {
+        star.rotation.x += Math.random() * (0.015 - 0.002) + 0.002;
+        star.rotation.y += Math.random() * (0.015 - 0.002) + 0.002;
+        star.rotation.z += Math.random() * (0.015 - 0.002) + 0.002;
+      });
+
+      shade3_starsRef.current.forEach((star) => {
+        star.rotation.x += Math.random() * (0.015 - 0.002) + 0.002;
+        star.rotation.y += Math.random() * (0.015 - 0.002) + 0.002;
+        star.rotation.z += Math.random() * (0.015 - 0.002) + 0.002;
+      });
+
+      normalStars.forEach((star) => {
         star.rotation.x += Math.random() * (0.015 - 0.002) + 0.002;
         star.rotation.y += Math.random() * (0.015 - 0.002) + 0.002;
         star.rotation.z += Math.random() * (0.015 - 0.002) + 0.002;
@@ -120,8 +145,14 @@ const ThreeBackground = () => {
 
   useEffect(() => {
     // Update the color of the stars when the color changes
-    starsRef.current.forEach((star) => {
-      star.material.color.set(colour);
+    shade1_starsRef.current.forEach((star) => {
+      star.material.color.set(colour[0]);
+    });
+    shade2_starsRef.current.forEach((star) => {
+      star.material.color.set(colour[1]);
+    });
+    shade3_starsRef.current.forEach((star) => {
+      star.material.color.set(colour[2]);
     });
   }, [colour]);
 

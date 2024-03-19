@@ -14,6 +14,9 @@ const NavBar = () => {
 
   return (
     <div className="flex flex-row gap-2">
+      <button className={`${page == "home" && "text-xl"}`} onClick={() => handleClick("home")}>
+        home
+      </button>
       <button className={`${page == "cv" && "text-xl"}`} onClick={() => handleClick("cv")}>
         cv
       </button>

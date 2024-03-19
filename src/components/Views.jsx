@@ -9,13 +9,13 @@ export const PageContext = createContext({
 });
 
 export const ColourContext = createContext({
-  color: "#3d4482",
+  color: ["#641220", "#6e1423", "#85182a"],
   setColor: () => {},
 });
 
 const Views = () => {
   const [page, setPage] = useState("home");
-  const [colour, setColour] = useState("#3d4482");
+  const [colour, setColour] = useState(["#641220", "#6e1423", "#85182a"]);
 
   return (
     <PageContext.Provider value={{ page, setPage }}>
