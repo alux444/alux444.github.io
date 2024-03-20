@@ -15,8 +15,9 @@ const Experience = () => {
   }, [page, transition]);
 
   return (
-    <div className={`grid grid-cols-1 gap-3 max-w-[90vw] ${isOpen ? "content-open" : "content-closed"}`}>
+    <div className={`flex flex-col justify-center h-full grow gap-3 max-w-[90vw] ${isOpen ? "content-open" : "content-closed"}`}>
       <h2 className="text-3xl">experience</h2>
+      < br/>
 
       <div className="grid grid-cols-1 gap-3">
         <div className="grid grid-cols-1 minmax(auto, 1fr)">

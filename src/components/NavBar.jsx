@@ -4,7 +4,7 @@ import { ColourContext, PageContext, TransitionContext } from "./Views";
 import { colours } from "../util/colours";
 
 const NavBar = () => {
-  const pages = ["home", "about", "experience", "projects"];
+  const pages = ["home", "experience", "projects"];
   const { setPage } = useContext(PageContext);
   const { setColour } = useContext(ColourContext);
   const { setTransition } = useContext(TransitionContext);

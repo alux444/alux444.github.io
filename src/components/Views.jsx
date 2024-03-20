@@ -1,10 +1,7 @@
 import { createContext, useState } from "react";
 import ThreeBackground from "./ThreeBackground";
-import TypewriterTitle from "./TypewriterTitle";
-import NavBar from "./NavBar";
 import Experience from "./pages/Experience";
 import Header from "./Header";
-import About from "./pages/About";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 
@@ -32,15 +29,16 @@ const Views = () => {
     <PageContext.Provider value={{ page, setPage }}>
       <ColourContext.Provider value={{ colour, setColour }}>
         <TransitionContext.Provider value={{ transition, setTransition }}>
-          <div className="flex flex-col justify-center items-center align-center min-h-screen w-screen">
+          <div className="min-h-screen flex flex-col">
             <div className="background-container">
               <ThreeBackground />
             </div>
             <Header />
+          <div className="flex grow flex-col justify-center items-center align-center w-screen">
             {page == "home" && <Home />}
             {page == "experience" && <Experience />}
-            {page == "about" && <About />}
             {page == "projects" && <Projects />}
+          </div>
           </div>
         </TransitionContext.Provider>
       </ColourContext.Provider>
