@@ -1,17 +1,18 @@
 import { useContext, useEffect, useState } from "react";
-import { PageContext } from "../Views";
+import { PageContext, TransitionContext } from "../Views";
 
 const Experience = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { page } = useContext(PageContext);
+  const {transition} = useContext(TransitionContext);
 
   useEffect(() => {
-    setIsOpen(true);
-  }, []);
-
-  useEffect(() => {
-    if (page != "experience") setIsOpen(false);
-  }, [page]);
+    if (transition) {
+      setIsOpen(false);
+    } else if (page === "experience") {
+      setIsOpen(true);
+    }
+  }, [page, transition]);
 
   return (
     <div className={`grid grid-cols-1 gap-3 max-w-[90vw] ${isOpen ? "content-open" : "content-closed"}`}>
@@ -33,6 +34,8 @@ const Experience = () => {
           <p>Set up scheduled Azure pipelines for automated repopulation of consumable test data.</p>
         </div>
       </div>
+
+      <hr/>
 
       <div className="grid grid-cols-1 gap-3">
         <div className="grid grid-cols-1 minmax(auto, 1fr)">

@@ -600,8 +600,16 @@ video {
   display: grid;
 }
 
+.h-40 {
+  height: 10rem;
+}
+
 .min-h-screen {
   min-height: 100vh;
+}
+
+.w-40 {
+  width: 10rem;
 }
 
 .w-screen {
@@ -750,23 +758,23 @@ h1 {
 }
 
 .content-closed {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 2.5s ease-out, transform 2.5s ease-out, -webkit-clip-path 2.5s ease-out;
-  transition: max-height 2.5s ease-out, transform 2.5s ease-out, clip-path 2.5s ease-out;
-  transition: max-height 2.5s ease-out, transform 2.5s ease-out, clip-path 2.5s ease-out, -webkit-clip-path 2.5s ease-out;
-  transform: translateY(100%);
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-          clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+  /* transition opacity */
 }
 
 .content-open {
-  max-height: 1000px;
-  /* adjust this value as needed */
-  transition: max-height 2.5s ease-in, transform 2.5s ease-in, -webkit-clip-path 2.5s ease-in;
-  transition: max-height 2.5s ease-in, transform 2.5s ease-in, clip-path 2.5s ease-in;
-  transition: max-height 2.5s ease-in, transform 2.5s ease-in, clip-path 2.5s ease-in, -webkit-clip-path 2.5s ease-in;
-  transform: translateY(0);
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
+  /* transition opacity */
+}
+
+.fixed-header {
+  position: fixed;
+  margin-top: 2rem;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  /* optional: this ensures the header is always on top of other content */
 }

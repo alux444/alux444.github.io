@@ -4,6 +4,10 @@ import { PageContext } from "../Views";
 // eslint-disable-next-line react/prop-types
 const NavButton = ({ pageName, changePage }) => {
   const { page } = useContext(PageContext);
+
+  async function run() {
+    await changePage(pageName);
+  }
   
   return (
     <div className="relative text-center flex items-center text-center justify-center">
@@ -25,7 +29,7 @@ const NavButton = ({ pageName, changePage }) => {
           transition: 'opacity 0.5s, transform 0.5s' 
         }} 
         className={`${page === pageName && "text-xl"}`} 
-        onClick={() => changePage(pageName)}
+        onClick={() => run()}
       >
         {pageName}
       </button>

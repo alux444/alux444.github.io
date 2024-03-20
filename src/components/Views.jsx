@@ -4,6 +4,9 @@ import TypewriterTitle from "./TypewriterTitle";
 import NavBar from "./NavBar";
 import Experience from "./pages/Experience";
 import Header from "./Header";
+import About from "./pages/About";
+import Home from "./pages/Home";
+import Projects from "./pages/Projects";
 
 export const PageContext = createContext({
   page: "home",
@@ -15,20 +18,31 @@ export const ColourContext = createContext({
   setColor: () => {},
 });
 
+export const TransitionContext = createContext({
+  transition: false,
+  setTransition: () => {},
+});
+
 const Views = () => {
   const [page, setPage] = useState("home");
   const [colour, setColour] = useState(["#641220", "#6e1423", "#85182a"]);
+  const [transition, setTransition] = useState(false);
 
   return (
     <PageContext.Provider value={{ page, setPage }}>
       <ColourContext.Provider value={{ colour, setColour }}>
-        <div className="flex flex-col justify-center items-center align-center min-h-screen w-screen">
-          <div className="background-container">
-            <ThreeBackground />
+        <TransitionContext.Provider value={{ transition, setTransition }}>
+          <div className="flex flex-col justify-center items-center align-center min-h-screen w-screen">
+            <div className="background-container">
+              <ThreeBackground />
+            </div>
+            <Header />
+            {page == "home" && <Home />}
+            {page == "experience" && <Experience />}
+            {page == "about" && <About />}
+            {page == "projects" && <Projects />}
           </div>
-          <Header/>
-          {page == "experience" && <Experience/>}
-        </div>
+        </TransitionContext.Provider>
       </ColourContext.Provider>
     </PageContext.Provider>
   );
