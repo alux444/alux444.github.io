@@ -61,3 +61,18 @@ h1 {
     opacity: 0%;
   }
 }
+
+.content-closed {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 2.5s ease-out, transform 2.5s ease-out, clip-path 2.5s ease-out;
+  transform: translateY(100%);
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+
+.content-open {
+  max-height: 1000px; /* adjust this value as needed */
+  transition: max-height 2.5s ease-in, transform 2.5s ease-in, clip-path 2.5s ease-in;
+  transform: translateY(0);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}

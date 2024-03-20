@@ -2,6 +2,8 @@ import { createContext, useState } from "react";
 import ThreeBackground from "./ThreeBackground";
 import TypewriterTitle from "./TypewriterTitle";
 import NavBar from "./NavBar";
+import Experience from "./pages/Experience";
+import Header from "./Header";
 
 export const PageContext = createContext({
   page: "home",
@@ -20,13 +22,12 @@ const Views = () => {
   return (
     <PageContext.Provider value={{ page, setPage }}>
       <ColourContext.Provider value={{ colour, setColour }}>
-        <div className="flex flex-col justify-center items-center align-center h-screen w-screen">
+        <div className="flex flex-col justify-center items-center align-center min-h-screen w-screen">
           <div className="background-container">
             <ThreeBackground />
           </div>
-          <h1 className="text-red">alex liang</h1>
-          <TypewriterTitle />
-          <NavBar />
+          <Header/>
+          {page == "experience" && <Experience/>}
         </div>
       </ColourContext.Provider>
     </PageContext.Provider>

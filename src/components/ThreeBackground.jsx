@@ -116,6 +116,7 @@ const ThreeBackground = () => {
       window.requestAnimationFrame(animate);
     };
     let previousWidth = window.innerWidth;
+    
     const handleResize = () => {
       const width = window.innerWidth;
 
