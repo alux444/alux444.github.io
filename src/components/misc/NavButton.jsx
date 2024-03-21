@@ -28,7 +28,7 @@ const NavButton = ({ pageName, changePage }) => {
           transform: pageName === page ? "scale(0.5)" : "scale(1)",
           transition: "opacity 0.5s, transform 0.5s, color 0.3s ease",
         }}
-        className={`${page === pageName && "text-xl"} text-red-500 
+        className={`${page === pageName && "text-xl"}  
         ${page == "home" && "text-rose-200 hover:text-rose-400"}
         ${page == "experience" && "text-cyan-100 hover:text-cyan-300"}
         ${page == "projects" && "text-indigo-200 hover:text-indigo-400"}
