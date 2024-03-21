@@ -26,9 +26,13 @@ const NavButton = ({ pageName, changePage }) => {
         style={{
           opacity: pageName === page ? 0 : 1,
           transform: pageName === page ? "scale(0.5)" : "scale(1)",
-          transition: "opacity 0.5s, transform 0.5s",
+          transition: "opacity 0.5s, transform 0.5s, color 0.3s ease",
         }}
-        className={`${page === pageName && "text-xl"}`}
+        className={`${page === pageName && "text-xl"} text-red-500 
+        ${page == "home" && "text-rose-200 hover:text-rose-400"}
+        ${page == "experience" && "text-cyan-100 hover:text-cyan-300"}
+        ${page == "projects" && "text-indigo-200 hover:text-indigo-400"}
+        `} 
         onClick={() => run()}
       >
         {pageName.charAt(0).toUpperCase() + pageName.slice(1)}
