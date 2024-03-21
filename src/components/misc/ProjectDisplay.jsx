@@ -13,13 +13,13 @@ const ProjectDisplay = ({ info, img }) => {
         <p className="italic text-sm">{info.technologies}</p>
         <div className="flex gap-2">
           {info.link && (
-            <a  href={info.link} target="_blank">
+            <a className="text-indigo-200 hover:text-indigo-400"  href={info.link} target="_blank">
               website
             </a>
           )}
           {info.github && info.link && <span> · </span>}
           {info.github && (
-            <a  href={info.github} target="_blank">
+            <a className="text-indigo-200 hover:text-indigo-400" href={info.github} target="_blank">
               github
             </a>
           )}

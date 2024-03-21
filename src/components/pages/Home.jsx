@@ -25,11 +25,11 @@ const Home = () => {
           <p>hey - i'm alex.</p>
           <p>
             i'm a penultimate-year software engineering student at the university of auckland and the industry lead for{" "}
-            <a href="https://sesa.org.nz/" target="_blank">
+            <a className="text-rose-200 hover:text-rose-400" href="https://sesa.org.nz/" target="_blank">
               sesa.
             </a>
           </p>
-          <p>i also work part time at <a href="https://www.spark.co.nz/" target="_blank">
+          <p>i also work part time at <a className="text-rose-200 hover:text-rose-400" href="https://www.spark.co.nz/" target="_blank">
               spark nz
             </a> as a software engineer.</p>
 
@@ -39,7 +39,7 @@ const Home = () => {
       </div>
       <hr/>
       <div className="flex flex-col gap-1 items-center">
-      <a className="text-xl" href={CV} rel="noopener noreferrer" target="_blank">
+      <a className="text-rose-200 hover:text-rose-400 text-xl" href={CV} rel="noopener noreferrer" target="_blank">
         view résumé
       </a>
       <Socials/>

@@ -596,16 +596,16 @@ video {
   margin-bottom: 1rem;
 }
 
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
 .mb-8 {
   margin-bottom: 2rem;
 }
 
 .mt-2 {
   margin-top: 0.5rem;
-}
-
-.mb-6 {
-  margin-bottom: 1.5rem;
 }
 
 .flex {
@@ -729,18 +729,38 @@ video {
   line-height: 1.75rem;
 }
 
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-
 .italic {
   font-style: italic;
+}
+
+.text-\[\#fecdd3\] {
+  --tw-text-opacity: 1;
+  color: rgb(254 205 211 / var(--tw-text-opacity));
+}
+
+.text-rose-200 {
+  --tw-text-opacity: 1;
+  color: rgb(254 205 211 / var(--tw-text-opacity));
+}
+
+.text-rose-800 {
+  --tw-text-opacity: 1;
+  color: rgb(159 18 57 / var(--tw-text-opacity));
+}
+
+.text-cyan-200 {
+  --tw-text-opacity: 1;
+  color: rgb(165 243 252 / var(--tw-text-opacity));
 }
 
 .text-cyan-100 {
   --tw-text-opacity: 1;
   color: rgb(207 250 254 / var(--tw-text-opacity));
+}
+
+.text-indigo-200 {
+  --tw-text-opacity: 1;
+  color: rgb(199 210 254 / var(--tw-text-opacity));
 }
 
 .transition {
@@ -766,13 +786,9 @@ video {
 
 a {
   font-weight: 500;
-  color: #cffafe;
+  /* color: #cffafe; */
   text-decoration: inherit;
   transition: color 0.3s ease;
-}
-
-a:hover {
-  color: #67e8f9;
 }
 
 body {
@@ -834,6 +850,26 @@ h1 {
   /* optional: this ensures the header is always on top of other content */
 }
 
+.hover\:text-rose-400:hover {
+  --tw-text-opacity: 1;
+  color: rgb(251 113 133 / var(--tw-text-opacity));
+}
+
+.hover\:text-cyan-400:hover {
+  --tw-text-opacity: 1;
+  color: rgb(34 211 238 / var(--tw-text-opacity));
+}
+
+.hover\:text-cyan-300:hover {
+  --tw-text-opacity: 1;
+  color: rgb(103 232 249 / var(--tw-text-opacity));
+}
+
+.hover\:text-indigo-400:hover {
+  --tw-text-opacity: 1;
+  color: rgb(129 140 248 / var(--tw-text-opacity));
+}
+
 @media (min-width: 500px) {
   .xs\:max-w-\[80vw\] {
     max-width: 80vw;
@@ -844,17 +880,9 @@ h1 {
   .sm\:max-w-\[60vw\] {
     max-width: 60vw;
   }
-
-  .sm\:max-w-\[70vw\] {
-    max-width: 70vw;
-  }
 }
 
 @media (min-width: 768px) {
-  .md\:max-w-\[50vw\] {
-    max-width: 50vw;
-  }
-
   .md\:max-w-\[60vw\] {
     max-width: 60vw;
   }
@@ -877,10 +905,6 @@ h1 {
 @media (min-width: 1280px) {
   .xl\:w-\[40vw\] {
     width: 40vw;
-  }
-
-  .xl\:max-w-\[40vw\] {
-    max-width: 40vw;
   }
 
   .xl\:max-w-\[45vw\] {
