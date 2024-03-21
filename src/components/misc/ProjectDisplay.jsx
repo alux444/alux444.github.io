@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 const ProjectDisplay = ({ info, img }) => {
   return (
     <div className="flex flex-col xs:flex-row gap-3 w-[80vw] lg:w-[43vw] xl:w-[40vw]">
-      <img src={img} alt={info.title} className="max-h-[40vw] xs:max-h-[20vh] max-w-[90vw] object-cover " />
+      <img src={img} alt={info.title} loading="lazy" className="max-h-[40vw] xs:max-h-[20vh] max-w-[90vw] object-cover " />
       <div className="flex flex-col justify-center">
         <p className="text-xl">{info.title}</p>
         <div className="w-fit">
