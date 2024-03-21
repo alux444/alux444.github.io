@@ -32,7 +32,7 @@ const Projects = () => {
   }, [page, transition]);
 
   return (
-    <div className={`flex flex-col h-full items-center max-w-[90vw] ${isOpen ? "content-open" : "content-closed"}`}>
+    <div className={`flex flex-col h-full items-center max-w-[90vw] mt-4 ${isOpen ? "content-open" : "content-closed"}`}>
       <h2 className="text-3xl">projects</h2>
       < br/>
       <div className="flex flex-wrap justify-center items-center gap-2 mb-8">

@@ -115,27 +115,35 @@ const ThreeBackground = () => {
       renderer.render(scene, camera);
       window.requestAnimationFrame(animate);
     };
-    let previousWidth = window.innerWidth;
     
+    let resizeTimeout;
+
     const handleResize = () => {
-      const width = window.innerWidth;
-
-      if (width !== previousWidth) {
-        const canvas = renderer.domElement;
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
         const width = window.innerWidth;
-        const height = window.innerHeight;
 
-        camera.aspect = width / height;
-        camera.updateProjectionMatrix();
+        if (width !== previousWidth) {
+          const canvas = renderer.domElement;
+          const width = window.innerWidth;
+          const height = window.innerHeight;
 
-        renderer.setSize(width, height);
-        renderer.setPixelRatio(window.devicePixelRatio);
+          camera.aspect = width / height;
+          camera.updateProjectionMatrix();
 
-        canvas.style.width = `${width}px`;
-        canvas.style.height = `${height}px`;
-      }
+          renderer.setSize(width, height);
+          renderer.setPixelRatio(window.devicePixelRatio);
+
+          canvas.style.width = `${width}px`;
+          canvas.style.height = `${height}px`;
+
+          previousWidth = width;
+        }
+      }, 10);
     };
 
+    let previousWidth = window.innerWidth;
+    handleResize();
     initScene();
     animate();
     window.addEventListener("resize", handleResize);
