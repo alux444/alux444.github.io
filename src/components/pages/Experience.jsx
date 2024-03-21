@@ -1,11 +1,13 @@
 import { useContext, useEffect, useState } from "react";
-import { PageContext, TransitionContext } from "../Views";
+import { ColourContext, PageContext, TransitionContext } from "../Views";
 import CV from "../../assets/cv.pdf";
+import { colours } from "../../util/colours";
 
 const Experience = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { page } = useContext(PageContext);
-  const {transition} = useContext(TransitionContext);
+  const { page, setPage } = useContext(PageContext);
+  const { transition, setTransition } = useContext(TransitionContext);
+  const { setColour } = useContext(ColourContext);
 
   useEffect(() => {
     if (transition) {
@@ -15,13 +17,22 @@ const Experience = () => {
     }
   }, [page, transition]);
 
+  async function changePage(newPage) {
+    setTransition(true);
+    await new Promise((resolve) => setTimeout(resolve, 300)); // adjust this value to match your exit transition duration
+    setPage(newPage);
+    await new Promise((resolve) => setTimeout(resolve, 300)); // adjust this value to match your entrance transition duration
+    setTransition(false);
+    setColour(colours[newPage]);
+  }
+
   return (
     <div className={`flex flex-col justify-center h-full grow gap-3 max-w-[90vw] ${isOpen ? "content-open" : "content-closed"}`}>
       <h2 className="text-3xl text-center">Experience</h2>
       <a className="text-cyan-100 hover:text-cyan-300 text-center" href={CV} download="alex-liang-cv.pdf" target="_blank">
         Download full résumé
       </a>
-      < br/>
+      <br />
 
       <div className="grid grid-cols-1 gap-3">
         <div className="grid grid-cols-1 minmax(auto, 1fr)">
@@ -31,7 +42,7 @@ const Experience = () => {
               Spark NZ
             </a>
           </h4>
-          <p>Auckland, NZ · Feb 2024 - present</p>
+          <p>Auckland, NZ · Feb 2024 - Present</p>
         </div>
         <div className="text-sm">
           <p>Continued as a primary contributor and maintainer of the ERP Test Suite.</p>
@@ -40,7 +51,7 @@ const Experience = () => {
         </div>
       </div>
 
-      <hr/>
+      <hr />
 
       <div className="grid grid-cols-1 gap-3">
         <div className="grid grid-cols-1 minmax(auto, 1fr)">
@@ -59,6 +70,12 @@ const Experience = () => {
           <p>Designed and managed test data using Microsoft SQL Server.</p>
         </div>
       </div>
+
+      <br />
+
+      <button className="text-cyan-100 hover:text-cyan-300 text-xl text-center" onClick={() => changePage("projects")}>
+        &lt; My Projects &gt;
+      </button>
     </div>
   );
 };

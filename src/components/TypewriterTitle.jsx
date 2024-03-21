@@ -40,13 +40,13 @@ const TypewriterTitle = () => {
     }
     run();
     return () => {
-      isCancelled.current = true; 
+      isCancelled.current = true;
     };
   }, []);
 
   return (
     <div className="flex flex-row max-w-[90vw] flex-wrap text-center min-h-8">
-      <p id="job-titles" className="titles"/>
+      <p id="job-titles" className="titles" />
       <span id="cursor">|</span>
     </div>
   );

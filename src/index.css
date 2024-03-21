@@ -33,6 +33,12 @@ a {
   transition: color 0.3s ease;
 }
 
+button {
+  font-weight: 500;
+  text-decoration: inherit;
+  transition: color 0.3s ease;
+}
+
 body {
   margin: 0;
   display: flex;
@@ -73,15 +79,6 @@ body {
 .content-open {
   opacity: 1;
   transition: opacity 0.3s ease-in; /* transition opacity */
-}
-
-.fixed-header {
-  position: fixed;
-  margin-top: 2rem;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100; /* optional: this ensures the header is always on top of other content */
 }
 
 @media screen and (max-width: 320px) {

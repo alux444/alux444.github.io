@@ -115,7 +115,7 @@ const ThreeBackground = () => {
       renderer.render(scene, camera);
       window.requestAnimationFrame(animate);
     };
-    
+
     const handleResize = () => {
       const width = window.innerWidth;
 
@@ -134,7 +134,7 @@ const ThreeBackground = () => {
         canvas.style.height = `${height}px`;
       }
     };
-    
+
     let previousWidth = window.innerWidth;
     window.addEventListener("resize", handleResize);
     handleResize();

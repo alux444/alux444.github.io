@@ -34,11 +34,11 @@ const Views = () => {
               <ThreeBackground />
             </div>
             <Header />
-          <div className="flex grow flex-col mb-6 justify-center items-center align-center w-screen">
-            {page == "home" && <Home />}
-            {page == "experience" && <Experience />}
-            {page == "projects" && <Projects />}
-          </div>
+            <div className="flex grow flex-col mb-8 justify-center items-center align-center w-screen">
+              {page == "home" && <Home />}
+              {page == "experience" && <Experience />}
+              {page == "projects" && <Projects />}
+            </div>
           </div>
         </TransitionContext.Provider>
       </ColourContext.Provider>

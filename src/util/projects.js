@@ -12,7 +12,7 @@ export const projects = [
     imgname: "ratdungeon",
     description: "Rogue-like game",
     technologies: "python · tcod",
-    github: "https://github.com/alux444/roguelike-game"
+    github: "https://github.com/alux444/roguelike-game",
   },
   {
     title: "KiwiMart",
@@ -20,7 +20,7 @@ export const projects = [
     description: "E-commerce site",
     technologies: "react · firebase · tailwind",
     link: "https://alux444.github.io/online-store/",
-    github: "https://github.com/alux444/online-store"
+    github: "https://github.com/alux444/online-store",
   },
   {
     title: "Chat App",
@@ -28,7 +28,7 @@ export const projects = [
     description: "Real-time chatapp",
     technologies: "react · firebase · github actions",
     link: "https://alux444.github.io/firebase-chatapp/",
-    github: "https://github.com/alux444/firebase-chatapp"
+    github: "https://github.com/alux444/firebase-chatapp",
   },
   {
     title: "Weather App v2",
@@ -36,7 +36,7 @@ export const projects = [
     description: "Revisited weather app",
     technologies: "react · weatherapi.com · materialsui",
     link: "https://alux444.github.io/weather-remastered/",
-    github: "https://github.com/alux444/weather-remastered"
+    github: "https://github.com/alux444/weather-remastered",
   },
   {
     title: "Project Fitness",
@@ -44,7 +44,6 @@ export const projects = [
     description: "Exercise suggester",
     technologies: "react · exercisedb api · youtubesearch api",
     link: "https://alux444.github.io/project-fitness/",
-    github: "https://github.com/alux444/project-fitness"
-  }
-
-]
+    github: "https://github.com/alux444/project-fitness",
+  },
+];

@@ -32,7 +32,7 @@ const NavButton = ({ pageName, changePage }) => {
         ${page == "home" && "text-rose-200 hover:text-rose-400"}
         ${page == "experience" && "text-cyan-100 hover:text-cyan-300"}
         ${page == "projects" && "text-indigo-200 hover:text-indigo-400"}
-        `} 
+        `}
         onClick={() => run()}
       >
         {pageName.charAt(0).toUpperCase() + pageName.slice(1)}
