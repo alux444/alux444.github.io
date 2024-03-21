@@ -628,6 +628,10 @@ video {
   max-height: 20vh;
 }
 
+.max-h-\[40vw\] {
+  max-height: 40vw;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -705,6 +709,11 @@ video {
   border-width: 1px;
 }
 
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .text-center {
   text-align: center;
 }
@@ -733,26 +742,6 @@ video {
   font-style: italic;
 }
 
-.text-\[\#fecdd3\] {
-  --tw-text-opacity: 1;
-  color: rgb(254 205 211 / var(--tw-text-opacity));
-}
-
-.text-rose-200 {
-  --tw-text-opacity: 1;
-  color: rgb(254 205 211 / var(--tw-text-opacity));
-}
-
-.text-rose-800 {
-  --tw-text-opacity: 1;
-  color: rgb(159 18 57 / var(--tw-text-opacity));
-}
-
-.text-cyan-200 {
-  --tw-text-opacity: 1;
-  color: rgb(165 243 252 / var(--tw-text-opacity));
-}
-
 .text-cyan-100 {
   --tw-text-opacity: 1;
   color: rgb(207 250 254 / var(--tw-text-opacity));
@@ -761,6 +750,11 @@ video {
 .text-indigo-200 {
   --tw-text-opacity: 1;
   color: rgb(199 210 254 / var(--tw-text-opacity));
+}
+
+.text-rose-200 {
+  --tw-text-opacity: 1;
+  color: rgb(254 205 211 / var(--tw-text-opacity));
 }
 
 .transition {
@@ -850,16 +844,6 @@ h1 {
   /* optional: this ensures the header is always on top of other content */
 }
 
-.hover\:text-rose-400:hover {
-  --tw-text-opacity: 1;
-  color: rgb(251 113 133 / var(--tw-text-opacity));
-}
-
-.hover\:text-cyan-400:hover {
-  --tw-text-opacity: 1;
-  color: rgb(34 211 238 / var(--tw-text-opacity));
-}
-
 .hover\:text-cyan-300:hover {
   --tw-text-opacity: 1;
   color: rgb(103 232 249 / var(--tw-text-opacity));
@@ -870,15 +854,36 @@ h1 {
   color: rgb(129 140 248 / var(--tw-text-opacity));
 }
 
+.hover\:text-rose-400:hover {
+  --tw-text-opacity: 1;
+  color: rgb(251 113 133 / var(--tw-text-opacity));
+}
+
 @media (min-width: 500px) {
+  .xs\:max-h-\[20vh\] {
+    max-height: 20vh;
+  }
+
   .xs\:max-w-\[80vw\] {
     max-width: 80vw;
+  }
+
+  .xs\:flex-row {
+    flex-direction: row;
   }
 }
 
 @media (min-width: 640px) {
+  .sm\:max-h-\[20vh\] {
+    max-height: 20vh;
+  }
+
   .sm\:max-w-\[60vw\] {
     max-width: 60vw;
+  }
+
+  .sm\:flex-row {
+    flex-direction: row;
   }
 }
 

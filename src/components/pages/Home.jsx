@@ -22,9 +22,9 @@ const Home = () => {
       <div className="flex flex-col md:flex-row gap-3 items-center">
         <img src={PROFILEPICTURE} alt="alex" className="w-44 h-44" loading="lazy" />
         <div className="flex flex-col flex-wrap">
-          <p>hey - i'm alex.</p>
+          <p>hey - i&#39;m alex.</p>
           <p>
-            i'm a penultimate-year software engineering student at the university of auckland and the industry lead for{" "}
+            i&#39;m a penultimate-year software engineering student at the university of auckland and the industry lead for{" "}
             <a className="text-rose-200 hover:text-rose-400" href="https://sesa.org.nz/" target="_blank">
               sesa.
             </a>
@@ -34,7 +34,7 @@ const Home = () => {
             </a> as a software engineer.</p>
 
           <br />
-          <p>i'm enthusiastic about everything related to technology and eager to explore any opportunities that allow me to expand my knowledge and skills.</p>
+          <p>i&#39;m enthusiastic about everything related to technology and eager to explore any opportunities that allow me to expand my knowledge and skills.</p>
         </div>
       </div>
       <hr/>
