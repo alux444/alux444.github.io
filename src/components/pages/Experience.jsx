@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { PageContext, TransitionContext } from "../Views";
+import CV from "../../assets/cv.pdf";
 
 const Experience = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,14 +17,17 @@ const Experience = () => {
 
   return (
     <div className={`flex flex-col justify-center h-full grow gap-3 max-w-[90vw] ${isOpen ? "content-open" : "content-closed"}`}>
-      <h2 className="text-3xl">experience</h2>
+      <h2 className="text-3xl text-center">experience</h2>
+      <a className="text-center" href={CV} rel="noopener noreferrer" target="_blank">
+        view full résumé
+      </a>
       < br/>
 
       <div className="grid grid-cols-1 gap-3">
         <div className="grid grid-cols-1 minmax(auto, 1fr)">
           <h4 className="text-xl">
             software engineer @{" "}
-            <a className="text-cyan-100" href="https://www.spark.co.nz/" target="_blank">
+            <a href="https://www.spark.co.nz/" target="_blank">
               spark nz
             </a>
           </h4>
@@ -42,7 +46,7 @@ const Experience = () => {
         <div className="grid grid-cols-1 minmax(auto, 1fr)">
           <h4 className="text-xl">
             software engineer intern @{" "}
-            <a className="text-cyan-100" href="https://www.spark.co.nz/" target="_blank">
+            <a href="https://www.spark.co.nz/" target="_blank">
               spark nz
             </a>
           </h4>

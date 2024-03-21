@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 
 const TypewriterTitle = () => {
-  const titles = ["software engineer at spark nz", "penultimate year software engineering student"];
+  const titles = ["software engineer at spark nz", "software engineering student at uoa"];
 
   const isCancelled = useRef(false);
 
@@ -45,7 +45,7 @@ const TypewriterTitle = () => {
   }, []);
 
   return (
-    <div className="flex flex-row" style={{ textShadow: "4px 4px 8px #000000" }}>
+    <div className="flex flex-row max-w-[90vw] flex-wrap text-center" style={{ textShadow: "4px 4px 8px #000000" }}>
       <p id="job-titles" />
       <span id="cursor">|</span>
     </div>

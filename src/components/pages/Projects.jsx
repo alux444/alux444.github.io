@@ -32,10 +32,10 @@ const Projects = () => {
   }, [page, transition]);
 
   return (
-    <div className={`flex flex-col h-full max-w-[90vw] ${isOpen ? "content-open" : "content-closed"}`}>
+    <div className={`flex flex-col h-full items-center max-w-[90vw] ${isOpen ? "content-open" : "content-closed"}`}>
       <h2 className="text-3xl">projects</h2>
       < br/>
-      <div className="flex flex-col gap-2 mb-8">
+      <div className="flex flex-wrap justify-center items-center gap-2 mb-8">
         {projects.map((project, index) => (
           <ProjectDisplay info={project} img={projectImages[project.imgname]} key={index} />
         ))}
