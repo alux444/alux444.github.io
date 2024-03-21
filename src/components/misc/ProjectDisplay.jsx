@@ -1,9 +1,23 @@
 import PropTypes from "prop-types";
+import { useEffect, useState } from "react";
 
 const ProjectDisplay = ({ info, img }) => {
+
+  const [isWide, setIsWide] = useState(window.innerWidth / window.innerHeight);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsWide(window.innerWidth / window.innerHeight);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
   return (
-    <div className="flex flex-col xs:flex-row gap-3 xs:items-center w-[80vw] lg:w-[43vw] xl:w-[40vw]">
-      <img src={img} alt={info.title} loading="lazy" className="max-h-[40vw] xs:max-h-[20vh] max-w-[90vw] object-cover " />
+    <div className={`flex ${isWide > 1.2 ? 'w-[40vw] items-center' : 'w-[80vw]'} flex-col ${isWide < 0.5 && 'flex-row'} md:flex-row gap-3`}>
+      <img src={img} alt={info.title} loading="lazy" className="max-h-[50vh] sm:max-h-[20vh] :max-h-[20vh] max-w-[90vw] md:max-w-[40vw] lg:max-w-[50vw] object-cover " />
       <div className="flex flex-col justify-center text-start">
         <p className="text-xl">{info.title}</p>
         <div className="w-fit">
