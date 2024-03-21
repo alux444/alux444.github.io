@@ -18,8 +18,8 @@ const Experience = () => {
   return (
     <div className={`flex flex-col justify-center h-full grow gap-3 max-w-[90vw] ${isOpen ? "content-open" : "content-closed"}`}>
       <h2 className="text-3xl text-center">experience</h2>
-      <a className="text-cyan-100 hover:text-cyan-300 text-center" href={CV} rel="noopener noreferrer" target="_blank">
-        view full résumé
+      <a className="text-cyan-100 hover:text-cyan-300 text-center" href={CV} download="alex-liang-cv.pdf" target="_blank">
+        download full résumé
       </a>
       < br/>
 
