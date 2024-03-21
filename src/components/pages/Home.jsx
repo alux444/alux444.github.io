@@ -22,25 +22,25 @@ const Home = () => {
       <div className="flex flex-col md:flex-row gap-3 items-center">
         <img src={PROFILEPICTURE} alt="alex" className="w-44 h-44" loading="lazy" />
         <div className="flex flex-col flex-wrap">
-          <p>hey - i&#39;m alex.</p>
+          <p>Hey - I&#39;m Alex.</p>
           <p>
-            i&#39;m a penultimate-year software engineering student at the university of auckland and the industry lead for{" "}
+            I&#39;m a penultimate-year software engineering student at the University of Auckland and the industry lead for{" "}
             <a className="text-rose-200 hover:text-rose-400" href="https://sesa.org.nz/" target="_blank">
-              sesa.
+              SESA.
             </a>
           </p>
-          <p>i also work part time at <a className="text-rose-200 hover:text-rose-400" href="https://www.spark.co.nz/" target="_blank">
-              spark nz
+          <p>I also work part time at <a className="text-rose-200 hover:text-rose-400" href="https://www.spark.co.nz/" target="_blank">
+              Spark NZ
             </a> as a software engineer.</p>
 
           <br />
-          <p>i&#39;m enthusiastic about everything related to technology and eager to explore any opportunities that allow me to expand my knowledge and skills.</p>
+          <p>I&#39;m enthusiastic about everything related to technology and eager to explore any opportunities that allow me to expand my knowledge and skills.</p>
         </div>
       </div>
       <hr/>
       <div className="flex flex-col gap-1 items-center">
       <a className="text-rose-200 hover:text-rose-400 text-xl" href={CV} download="alex-liang-cv.pdf" target="_blank">
-        download résumé
+        Download Résumé
       </a>
       <Socials/>
       </div>

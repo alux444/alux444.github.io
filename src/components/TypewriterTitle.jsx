@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 
 const TypewriterTitle = () => {
-  const titles = ["software engineer at spark nz", "software engineering student at uoa"];
+  const titles = ["Software Engineer at Spark NZ", "UoA software engineering student"];
 
   const isCancelled = useRef(false);
 
@@ -29,7 +29,7 @@ const TypewriterTitle = () => {
         await sleep(100);
       }
 
-      await sleep(1000);
+      await sleep(500);
       wordIdx = (wordIdx + 1) % titles.length;
     }
   };
@@ -40,13 +40,13 @@ const TypewriterTitle = () => {
     }
     run();
     return () => {
-      isCancelled.current = true;
+      isCancelled.current = true; 
     };
   }, []);
 
   return (
-    <div className="flex flex-row max-w-[90vw] flex-wrap text-center" style={{ textShadow: "4px 4px 8px #000000" }}>
-      <p id="job-titles" />
+    <div className="flex flex-row max-w-[90vw] flex-wrap text-center min-h-8">
+      <p id="job-titles" className="titles"/>
       <span id="cursor">|</span>
     </div>
   );

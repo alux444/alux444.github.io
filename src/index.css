@@ -3,9 +3,10 @@
 @tailwind utilities;
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   line-height: 1.5;
   font-weight: 400;
+  font-size: 0.9rem;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -15,6 +16,15 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* * {
+  border: 1px solid red;
+} */
+
+h1 {
+  font-size: 2.8em;
+  line-height: 1.1;
 }
 
 a {
@@ -31,10 +41,6 @@ body {
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
 
 .background-container {
   position: fixed;
@@ -77,3 +83,14 @@ h1 {
   right: 0;
   z-index: 100; /* optional: this ensures the header is always on top of other content */
 }
+
+@media screen and (max-width: 320px) {
+  .titles {
+    font-size: x-small;
+  }
+
+  #cursor {
+    font-size: x-small;
+  }
+}
+

@@ -19,7 +19,7 @@ const NavBar = () => {
   }
 
   return (
-    <div className="flex flex-row gap-2">
+    <div className="flex flex-row gap-3">
       {pages.map((page) => (
         <NavButton pageName={page} changePage={changePage} key={page} />
       ))}

@@ -17,21 +17,21 @@ const Experience = () => {
 
   return (
     <div className={`flex flex-col justify-center h-full grow gap-3 max-w-[90vw] ${isOpen ? "content-open" : "content-closed"}`}>
-      <h2 className="text-3xl text-center">experience</h2>
+      <h2 className="text-3xl text-center">Experience</h2>
       <a className="text-cyan-100 hover:text-cyan-300 text-center" href={CV} download="alex-liang-cv.pdf" target="_blank">
-        download full résumé
+        Download full résumé
       </a>
       < br/>
 
       <div className="grid grid-cols-1 gap-3">
         <div className="grid grid-cols-1 minmax(auto, 1fr)">
           <h4 className="text-xl">
-            software engineer @{" "}
+            Software Engineer @{" "}
             <a className="text-cyan-100 hover:text-cyan-300" href="https://www.spark.co.nz/" target="_blank">
-              spark nz
+              Spark NZ
             </a>
           </h4>
-          <p>auckland, nz · feb 2024 - present</p>
+          <p>Auckland, NZ · Feb 2024 - present</p>
         </div>
         <div className="text-sm">
           <p>Continued as a primary contributor and maintainer of the ERP Test Suite.</p>
@@ -45,12 +45,12 @@ const Experience = () => {
       <div className="grid grid-cols-1 gap-3">
         <div className="grid grid-cols-1 minmax(auto, 1fr)">
           <h4 className="text-xl">
-            software engineer intern @{" "}
+            Software Engineer Intern @{" "}
             <a className="text-cyan-100 hover:text-cyan-300" href="https://www.spark.co.nz/" target="_blank">
-              spark nz
+              Spark NZ
             </a>
           </h4>
-          <p>auckland, nz · nov 2024 - feb 2024</p>
+          <p>Auckland, NZ · Nov 2024 - Feb 2024</p>
         </div>
         <div className="text-sm">
           <p>Delivered over 40 automated, end-to-end test scripts to production.</p>

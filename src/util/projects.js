@@ -1,47 +1,47 @@
 export const projects = [
   {
-    title: "tracktrekker",
+    title: "TrackTrekker",
     imgname: "tracktrekker",
-    description: "song suggester",
+    description: "Song suggester",
     technologies: "react · typescript · spotify api · cypress",
     link: "https://alux444.github.io/tracktrekker/",
     github: "https://github.com/alux444/tracktrekker",
   },
   {
-    title: "rat dungeon",
+    title: "Rat Dungeon",
     imgname: "ratdungeon",
-    description: "rogue-like game",
+    description: "Rogue-like game",
     technologies: "python · tcod",
     github: "https://github.com/alux444/roguelike-game"
   },
   {
-    title: "kiwimart",
+    title: "KiwiMart",
     imgname: "kiwimart",
-    description: "e-commerce site",
+    description: "E-commerce site",
     technologies: "react · firebase · tailwind",
     link: "https://alux444.github.io/online-store/",
     github: "https://github.com/alux444/online-store"
   },
   {
-    title: "chatapp",
+    title: "Chat App",
     imgname: "chatapp",
-    description: "real-time chatapp",
+    description: "Real-time chatapp",
     technologies: "react · firebase · github actions",
     link: "https://alux444.github.io/firebase-chatapp/",
     github: "https://github.com/alux444/firebase-chatapp"
   },
   {
-    title: "weather app v2",
+    title: "Weather App v2",
     imgname: "weatherapp",
-    description: "revisited weather app",
-    technologies: "react · weatherapi.com api · materialsui",
+    description: "Revisited weather app",
+    technologies: "react · weatherapi.com · materialsui",
     link: "https://alux444.github.io/weather-remastered/",
     github: "https://github.com/alux444/weather-remastered"
   },
   {
-    title: "project fitness",
+    title: "Project Fitness",
     imgname: "projectfitness",
-    description: "exercise suggester",
+    description: "Exercise suggester",
     technologies: "react · exercisedb api · youtubesearch api",
     link: "https://alux444.github.io/project-fitness/",
     github: "https://github.com/alux444/project-fitness"
