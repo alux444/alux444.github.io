@@ -16,8 +16,8 @@ const ProjectDisplay = ({ info, img }) => {
     };
   }, []);
   return (
-    <div className={`flex ${isWide > 1.2 ? 'w-[40vw] items-center' : 'w-[80vw]'} flex-col ${isWide < 0.5 && 'flex-row'} md:flex-row gap-3`}>
-      <img src={img} alt={info.title} loading="lazy" className="max-h-[50vh] sm:max-h-[20vh] :max-h-[20vh] max-w-[90vw] md:max-w-[40vw] lg:max-w-[50vw] object-cover " />
+    <div className={`flex ${isWide > 1.35 ? 'w-[40vw] items-center' : 'w-[80vw]'} flex-col ${isWide < 0.5 && 'flex-row'} md:flex-row gap-3`}>
+      <img src={img} alt={info.title} loading="lazy" className="max-h-[50vh] sm:max-h-[40vh] md:max-h-[20vh] max-w-[90vw] md:max-w-[40vw] lg:max-w-[50vw] object-cover " />
       <div className="flex flex-col justify-center text-start">
         <p className="text-xl">{info.title}</p>
         <div className="w-fit">
@@ -25,7 +25,7 @@ const ProjectDisplay = ({ info, img }) => {
           <hr />
         </div>
         <p className="italic text-sm">{info.technologies}</p>
-        <div className="flex gap-2">
+        <div className="flex gap-2 flex-wrap">
           {info.link && (
             <a className="text-indigo-200 hover:text-indigo-400" href={info.link} target="_blank">
               Website
