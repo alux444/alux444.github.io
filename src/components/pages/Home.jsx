@@ -35,7 +35,7 @@ const Home = () => {
         <div className="flex flex-col flex-wrap">
           <p>Hey - I&#39;m Alex.</p>
           <p>
-            I&#39;m a penultimate-year software engineering student at the 
+            I&#39;m a penultimate-year software engineering student at the{" "}
             <a className="text-rose-200 hover:text-rose-400" href="https://www.auckland.ac.nz/en.html" target="_blank">
               Univeristy of Auckland
             </a> and the Industry Lead for{" "}
