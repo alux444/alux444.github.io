@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { PageContext, TransitionContext } from "../Views";
+import { ColourContext, PageContext, TransitionContext } from "../Views";
 import { projects } from "../../util/projects";
 import ProjectDisplay from "../misc/ProjectDisplay";
 import tracktrekker from "../../assets/tracktrekker.png";
@@ -20,8 +20,18 @@ const projectImages = {
 
 const Projects = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { page } = useContext(PageContext);
-  const { transition } = useContext(TransitionContext);
+  const { page, setPage } = useContext(PageContext);
+  const { transition, setTransition } = useContext(TransitionContext);
+  const { colours, setColour } = useContext(ColourContext);
+
+  async function changePage(newPage) {
+    setTransition(true);
+    await new Promise((resolve) => setTimeout(resolve, 300)); // adjust this value to match your exit transition duration
+    setPage(newPage);
+    await new Promise((resolve) => setTimeout(resolve, 300)); // adjust this value to match your entrance transition duration
+    setTransition(false);
+    setColour(colours[newPage]);
+  }
 
   useEffect(() => {
     if (transition) {
@@ -40,6 +50,9 @@ const Projects = () => {
           <ProjectDisplay info={project} img={projectImages[project.imgname]} key={index} />
         ))}
       </div>
+      <button className="text-indigo-200 hover:text-indigo-400 text-xl text-center mt-5 mb-3" onClick={() => changePage("home")}>
+        &lt; Home &gt;
+      </button>
     </div>
   );
 };

@@ -45,9 +45,10 @@ const Experience = () => {
           <p>Auckland, NZ · Feb 2024 - Present</p>
         </div>
         <div className="text-sm">
-          <p>Continued as a primary contributor and maintainer of the ERP Test Suite.</p>
-          <p>Utilised node libraries to develop scripts for the generation of test data and files.</p>
-          <p>Set up scheduled Azure pipelines for automated repopulation of consumable test data.</p>
+          <p>· Increased test case coverage by over 300% by delivering 80+ automated test scripts to production.</p>
+          <p>· Automated 50+ hours worth of manual testing labour in every test suite run.</p>
+          <p>· Utilised node libraries to develop scripts for the generation of test data and files.</p>
+          <p>· Set up scheduled Azure pipelines for automated repopulation of consumable test data.</p>
         </div>
       </div>
 
@@ -64,10 +65,10 @@ const Experience = () => {
           <p>Auckland, NZ · Nov 2024 - Feb 2024</p>
         </div>
         <div className="text-sm">
-          <p>Delivered over 40 automated, end-to-end test scripts to production.</p>
-          <p>Designed and deployed an Azure Power App to display test results from an Azure storage container.</p>
-          <p>Collaborated with QA engineers and manual testers to automate tests cases using Playwright.</p>
-          <p>Designed and managed test data using Microsoft SQL Server.</p>
+          <p>· Delivered 40+ automated, end-to-end test scripts to production using Playwright.</p>
+          <p>· Improved test reliability by optimising existing test scripts, resulting in a 5x decrease in flakiness.</p>
+          <p>· Designed and deployed an Azure Power App to display test results from an Azure storage container.</p>
+          <p>· Designed and managed test data using Microsoft SQL Server.</p>
         </div>
       </div>
 
