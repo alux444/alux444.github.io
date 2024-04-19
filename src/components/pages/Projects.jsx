@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { ColourContext, PageContext, TransitionContext } from "../Views";
 import { projects } from "../../util/projects";
+import { colours } from "../../util/colours";
 import ProjectDisplay from "../misc/ProjectDisplay";
 import tracktrekker from "../../assets/tracktrekker.png";
 import kiwimart from "../../assets/kiwimart.png";
@@ -22,7 +23,7 @@ const Projects = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { page, setPage } = useContext(PageContext);
   const { transition, setTransition } = useContext(TransitionContext);
-  const { colours, setColour } = useContext(ColourContext);
+  const { setColour } = useContext(ColourContext);
 
   async function changePage(newPage) {
     setTransition(true);
