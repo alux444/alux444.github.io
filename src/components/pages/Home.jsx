@@ -37,7 +37,7 @@ const Home = () => {
           <p>
             I&#39;m a penultimate-year software engineering student at the{" "}
             <a className="text-rose-200 hover:text-rose-400" href="https://www.auckland.ac.nz/en.html" target="_blank">
-              Univeristy of Auckland
+              University of Auckland
             </a> and the Industry Lead for{" "}
             <a className="text-rose-200 hover:text-rose-400" href="https://sesa.org.nz/" target="_blank">
               SESA.
